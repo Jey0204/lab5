@@ -10,8 +10,8 @@ InterfejsUzytkownika::~InterfejsUzytkownika() {}
 
 void InterfejsUzytkownika::uruchom()
 {
-    std::cout << "=== GENERATOR SYGNAŁÓW - INTERFEJS UŻYTKOWNIKA ===" << std::endl;
-    std::cout << "Witaj w interaktywnym generatorze sygnałów!" << std::endl << std::endl;
+    std::cout << "=== GENERATOR SYGNALOW - INTERFEJS UZYTKOWNIKA ===" << std::endl;
+    std::cout << "Witaj w interaktywnym generatorze sygnalow!" << std::endl << std::endl;
     
     bool kontynuuj = true;
     while (kontynuuj)
@@ -28,29 +28,29 @@ void InterfejsUzytkownika::uruchom()
                 if (m_generator)
                     dodajOgranicznikAmplitudy();
                 else
-                    std::cout << "Najpierw wybierz sygnał!" << std::endl;
+                    std::cout << "Najpierw wybierz sygnal!" << std::endl;
                 break;
             case 3:
                 if (m_generator)
                     generujProbki();
                 else
-                    std::cout << "Najpierw wybierz sygnał!" << std::endl;
+                    std::cout << "Najpierw wybierz sygnal!" << std::endl;
                 break;
             case 4:
                 if (m_generator)
                     zapiszDoPliku();
                 else
-                    std::cout << "Najpierw wybierz sygnał!" << std::endl;
+                    std::cout << "Najpierw wybierz sygnal!" << std::endl;
                 break;
             case 5:
                 if (m_generator)
                     wyswietlParametry();
                 else
-                    std::cout << "Brak aktywnego sygnału." << std::endl;
+                    std::cout << "Brak aktywnego sygnalu." << std::endl;
                 break;
             case 6:
                 kontynuuj = false;
-                std::cout << "Dziękuję za korzystanie z programu!" << std::endl;
+                std::cout << "Dziekuje za korzystanie z programu!" << std::endl;
                 break;
         }
         std::cout << std::endl;
@@ -59,25 +59,25 @@ void InterfejsUzytkownika::uruchom()
 
 void InterfejsUzytkownika::wyswietlMenu()
 {
-    std::cout << "=== MENU GŁÓWNE ===" << std::endl;
-    std::cout << "1. Wybierz typ sygnału" << std::endl;
+    std::cout << "=== MENU GLOWNE ===" << std::endl;
+    std::cout << "1. Wybierz typ sygnalu" << std::endl;
     std::cout << "2. Dodaj ogranicznik amplitudy" << std::endl;
-    std::cout << "3. Generuj próbki sygnału" << std::endl;
-    std::cout << "4. Zapisz sygnał do pliku" << std::endl;
-    std::cout << "5. Wyświetl parametry aktualnego sygnału" << std::endl;
-    std::cout << "6. Wyjście" << std::endl;
-    std::cout << "Wybierz opcję (1-6): ";
+    std::cout << "3. Generuj probki sygnalu" << std::endl;
+    std::cout << "4. Zapisz sygnal do pliku" << std::endl;
+    std::cout << "5. Wyswietl parametry aktualnego sygnalu" << std::endl;
+    std::cout << "6. Wyjscie" << std::endl;
+    std::cout << "Wybierz opcje (1-6): ";
 }
 
 void InterfejsUzytkownika::wyswietlMenuSygnalow()
 {
-    std::cout << "\n=== WYBÓR TYPU SYGNAŁU ===" << std::endl;
-    std::cout << "1. Wartość stała" << std::endl;
-    std::cout << "2. Sygnał sinusoidalny" << std::endl;
-    std::cout << "3. Sygnał prostokątny" << std::endl;
-    std::cout << "4. Sygnał trójkątny" << std::endl;
-    std::cout << "5. Szum biały" << std::endl;
-    std::cout << "Wybierz typ sygnału (1-5): ";
+    std::cout << "\n=== WYBOR TYPU SYGNALU ===" << std::endl;
+    std::cout << "1. Wartosc stala" << std::endl;
+    std::cout << "2. Sygnal sinusoidalny" << std::endl;
+    std::cout << "3. Sygnal prostokatny" << std::endl;
+    std::cout << "4. Sygnal trojkatny" << std::endl;
+    std::cout << "5. Szum bialy" << std::endl;
+    std::cout << "Wybierz typ sygnalu (1-5): ";
     
     int wybor = pobierzWybor(1, 5);
     
@@ -102,7 +102,7 @@ void InterfejsUzytkownika::wyswietlMenuSygnalow()
     
     if (m_generator)
     {
-        std::cout << "Sygnał został utworzony pomyślnie!" << std::endl;
+        std::cout << "Sygnal zostal utworzony pomyslnie!" << std::endl;
     }
 }
 
@@ -117,7 +117,7 @@ int InterfejsUzytkownika::pobierzWybor(int min, int max)
         {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Nieprawidłowy wybór. Podaj liczbę z zakresu " << min << "-" << max << ": ";
+            std::cout << "Nieprawidlowy wybor. Podaj liczbe z zakresu " << min << "-" << max << ": ";
         }
         else
         {
@@ -139,7 +139,7 @@ double InterfejsUzytkownika::pobierzLiczbe(const std::string& prompt)
         {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Nieprawidłowa wartość. Podaj liczbę: ";
+            std::cout << "Nieprawidlowa wartosc. Podaj liczbe: ";
         }
         else
         {
@@ -161,7 +161,7 @@ int InterfejsUzytkownika::pobierzLiczbeCalkowita(const std::string& prompt)
         {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Nieprawidłowa wartość. Podaj liczbę całkowitą większą od 0: ";
+            std::cout << "Nieprawidlowa wartosc. Podaj liczbe calkowita wieksza od 0: ";
         }
         else
         {
@@ -173,35 +173,35 @@ int InterfejsUzytkownika::pobierzLiczbeCalkowita(const std::string& prompt)
 
 SygnalGenerator* InterfejsUzytkownika::stworzWartoscStala()
 {
-    std::cout << "\n=== KONFIGURACJA WARTOŚCI STAŁEJ ===" << std::endl;
-    double wartosc = pobierzLiczbe("Podaj wartość stałą: ");
+    std::cout << "\n=== KONFIGURACJA WARTOSCI STALEJ ===" << std::endl;
+    double wartosc = pobierzLiczbe("Podaj wartosc stala: ");
     
     return new WartoscStalaGenerator(wartosc);
 }
 
 SygnalGenerator* InterfejsUzytkownika::stworzSinus()
 {
-    std::cout << "\n=== KONFIGURACJA SYGNAŁU SINUSOIDALNEGO ===" << std::endl;
-    double amplituda = pobierzLiczbe("Podaj amplitudę: ");
-    double czestotliwosc = pobierzLiczbe("Podaj częstotliwość [Hz]: ");
+    std::cout << "\n=== KONFIGURACJA SYGNALU SINUSOIDALNEGO ===" << std::endl;
+    double amplituda = pobierzLiczbe("Podaj amplitude: ");
+    double czestotliwosc = pobierzLiczbe("Podaj czestotliwosc [Hz]: ");
     
-    // Sinus jest dekoratorem, więc potrzebuje sygnału bazowego (wartość stała = 0)
+    // Sinus jest dekoratorem, wiec potrzebuje sygnalu bazowego (wartosc stala = 0)
     SygnalGenerator* bazowy = new WartoscStalaGenerator(0.0);
     return new SinusGenerator(bazowy, amplituda, czestotliwosc);
 }
 
 SygnalGenerator* InterfejsUzytkownika::stworzProstokat()
 {
-    std::cout << "\n=== KONFIGURACJA SYGNAŁU PROSTOKĄTNEGO ===" << std::endl;
-    double amplituda = pobierzLiczbe("Podaj amplitudę: ");
+    std::cout << "\n=== KONFIGURACJA SYGNALU PROSTOKATNEGO ===" << std::endl;
+    double amplituda = pobierzLiczbe("Podaj amplitude: ");
     double okres = pobierzLiczbe("Podaj okres [s]: ");
-    double wypelnienie = pobierzLiczbe("Podaj wypełnienie (0.0-1.0): ");
+    double wypelnienie = pobierzLiczbe("Podaj wypelnienie (0.0-1.0): ");
     
-    // Sprawdzenie zakresu wypełnienia
+    // Sprawdzenie zakresu wypelnienia
     while (wypelnienie < 0.0 || wypelnienie > 1.0)
     {
-        std::cout << "Wypełnienie musi być w zakresie 0.0-1.0!" << std::endl;
-        wypelnienie = pobierzLiczbe("Podaj wypełnienie (0.0-1.0): ");
+        std::cout << "Wypelnienie musi byc w zakresie 0.0-1.0!" << std::endl;
+        wypelnienie = pobierzLiczbe("Podaj wypelnienie (0.0-1.0): ");
     }
     
     // Konwersja okresu na częstotliwość
@@ -213,16 +213,16 @@ SygnalGenerator* InterfejsUzytkownika::stworzProstokat()
 
 SygnalGenerator* InterfejsUzytkownika::stworzTrojkat()
 {
-    std::cout << "\n=== KONFIGURACJA SYGNAŁU TRÓJKĄTNEGO ===" << std::endl;
-    double amplituda = pobierzLiczbe("Podaj amplitudę: ");
+    std::cout << "\n=== KONFIGURACJA SYGNALU TROJKATNEGO ===" << std::endl;
+    double amplituda = pobierzLiczbe("Podaj amplitude: ");
     double okres = pobierzLiczbe("Podaj okres [s]: ");
-    double wypelnienie = pobierzLiczbe("Podaj wypełnienie (0.0-1.0): ");
+    double wypelnienie = pobierzLiczbe("Podaj wypelnienie (0.0-1.0): ");
     
-    // Sprawdzenie zakresu wypełnienia
+    // Sprawdzenie zakresu wypelnienia
     while (wypelnienie < 0.0 || wypelnienie > 1.0)
     {
-        std::cout << "Wypełnienie musi być w zakresie 0.0-1.0!" << std::endl;
-        wypelnienie = pobierzLiczbe("Podaj wypełnienie (0.0-1.0): ");
+        std::cout << "Wypelnienie musi byc w zakresie 0.0-1.0!" << std::endl;
+        wypelnienie = pobierzLiczbe("Podaj wypelnienie (0.0-1.0): ");
     }
     
     // Konwersja okresu na częstotliwość
@@ -234,8 +234,8 @@ SygnalGenerator* InterfejsUzytkownika::stworzTrojkat()
 
 SygnalGenerator* InterfejsUzytkownika::stworzSzumBialy()
 {
-    std::cout << "\n=== KONFIGURACJA SZUMU BIAŁEGO ===" << std::endl;
-    double amplituda = pobierzLiczbe("Podaj amplitudę szumu: ");
+    std::cout << "\n=== KONFIGURACJA SZUMU BIALEGO ===" << std::endl;
+    double amplituda = pobierzLiczbe("Podaj amplitude szumu: ");
     
     SygnalGenerator* bazowy = new WartoscStalaGenerator(0.0);
     return new SzumBialyGenerator(bazowy, amplituda);
@@ -244,42 +244,42 @@ SygnalGenerator* InterfejsUzytkownika::stworzSzumBialy()
 void InterfejsUzytkownika::dodajOgranicznikAmplitudy()
 {
     std::cout << "\n=== DODAWANIE OGRANICZNIKA AMPLITUDY ===" << std::endl;
-    double minAmplituda = pobierzLiczbe("Podaj minimalną amplitudę: ");
-    double maxAmplituda = pobierzLiczbe("Podaj maksymalną amplitudę: ");
+    double minAmplituda = pobierzLiczbe("Podaj minimalna amplitude: ");
+    double maxAmplituda = pobierzLiczbe("Podaj maksymalna amplitude: ");
       if (minAmplituda > maxAmplituda)
     {
         std::swap(minAmplituda, maxAmplituda);
-        std::cout << "Zamieniono wartości - min: " << minAmplituda << ", max: " << maxAmplituda << std::endl;
+        std::cout << "Zamieniono wartosci - min: " << minAmplituda << ", max: " << maxAmplituda << std::endl;
     }
     
-    // OgranicznikAmplitudy używa symetrycznego ograniczenia względem zera
-    // Obliczamy limit jako maksymalną wartość bezwzględną
+    // OgranicznikAmplitudy uzywa symetrycznego ograniczenia wzgledem zera
+    // Obliczamy limit jako maksymalna wartosc bezwzgledna
     double limit = std::max(std::abs(minAmplituda), std::abs(maxAmplituda));
     
     // Tworzenie nowego ogranicznika jako dekoratora
     SygnalGenerator* ograniczony = new OgranicznikAmplitudy(m_generator.release(), limit);
     m_generator.reset(ograniczony);
     
-    std::cout << "Ogranicznik amplitudy został dodany!" << std::endl;
+    std::cout << "Ogranicznik amplitudy zostal dodany!" << std::endl;
 }
 
 void InterfejsUzytkownika::generujProbki()
 {
-    std::cout << "\n=== GENEROWANIE PRÓBEK SYGNAŁU ===" << std::endl;
-    int liczbaProbek = pobierzLiczbeCalkowita("Podaj liczbę próbek do wygenerowania: ");
+    std::cout << "\n=== GENEROWANIE PROBEK SYGNALU ===" << std::endl;
+    int liczbaProbek = pobierzLiczbeCalkowita("Podaj liczbe probek do wygenerowania: ");
     
-    std::cout << "\nWygenerowane próbki:" << std::endl;
+    std::cout << "\nWygenerowane probki:" << std::endl;
     std::cout << std::fixed << std::setprecision(6);
     
     for (int i = 0; i < liczbaProbek; ++i)
     {
         double wartosc = m_generator->generuj();
-        std::cout << "Próbka " << std::setw(4) << (i + 1) << ": " << std::setw(12) << wartosc << std::endl;
+        std::cout << "Probka " << std::setw(4) << (i + 1) << ": " << std::setw(12) << wartosc << std::endl;
         
-        // Przerwij po 20 próbkach i zapytaj czy kontynuować
+        // Przerwij po 20 probkach i zapytaj czy kontynuowac
         if ((i + 1) % 20 == 0 && (i + 1) < liczbaProbek)
         {
-            std::cout << "\nWyświetlono " << (i + 1) << " próbek. Czy kontynuować? (t/n): ";
+            std::cout << "\nWyswietlono " << (i + 1) << " probek. Czy kontynuowac? (t/n): ";
             char odpowiedz;
             std::cin >> odpowiedz;
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -295,47 +295,47 @@ void InterfejsUzytkownika::generujProbki()
 
 void InterfejsUzytkownika::zapiszDoPliku()
 {
-    std::cout << "\n=== ZAPIS SYGNAŁU DO PLIKU ===" << std::endl;
-    std::cout << "Podaj nazwę pliku (bez rozszerzenia): ";
+    std::cout << "\n=== ZAPIS SYGNALU DO PLIKU ===" << std::endl;
+    std::cout << "Podaj nazwe pliku (bez rozszerzenia): ";
     std::string nazwaPliku;
     std::getline(std::cin, nazwaPliku);
     nazwaPliku += ".txt";
     
-    int liczbaProbek = pobierzLiczbeCalkowita("Podaj liczbę próbek do zapisania: ");
+    int liczbaProbek = pobierzLiczbeCalkowita("Podaj liczbe probek do zapisania: ");
     
     std::ofstream plik(nazwaPliku);
     if (!plik.is_open())
     {
-        std::cout << "Błąd: Nie można utworzyć pliku " << nazwaPliku << std::endl;
+        std::cout << "Blad: Nie mozna utworzyc pliku " << nazwaPliku << std::endl;
         return;
     }
     
-    plik << "# Wygenerowany sygnał - " << m_generator->getType() << std::endl;
-    plik << "# Liczba próbek: " << liczbaProbek << std::endl;
+    plik << "# Wygenerowany sygnal - " << m_generator->getType() << std::endl;
+    plik << "# Liczba probek: " << liczbaProbek << std::endl;
     plik << "# Format: numer_probki wartosc" << std::endl;
     plik << std::fixed << std::setprecision(6);
     
-    std::cout << "\nWygenerowane próbki (zapisywane do pliku):" << std::endl;
+    std::cout << "\nWygenerowane probki (zapisywane do pliku):" << std::endl;
     std::cout << std::fixed << std::setprecision(6);
     
     for (int i = 0; i < liczbaProbek; ++i)
     {
         double wartosc = m_generator->generuj();
         plik << (i + 1) << "\t" << wartosc << std::endl;
-        std::cout << "Próbka " << std::setw(4) << (i + 1) << ": " << std::setw(12) << wartosc << std::endl;
+        std::cout << "Probka " << std::setw(4) << (i + 1) << ": " << std::setw(12) << wartosc << std::endl;
         
-        // Przerwij wyświetlanie po 20 próbkach i zapytaj czy kontynuować
+        // Przerwij wyswietlanie po 20 probkach i zapytaj czy kontynuowac
         if ((i + 1) % 20 == 0 && (i + 1) < liczbaProbek)
         {
-            std::cout << "\nWyświetlono " << (i + 1) << " próbek. Czy kontynuować wyświetlanie? (t/n): ";
+            std::cout << "\nWyswietlono " << (i + 1) << " probek. Czy kontynuowac wyswietlanie? (t/n): ";
             char odpowiedz;
             std::cin >> odpowiedz;
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             
             if (odpowiedz != 't' && odpowiedz != 'T')
             {
-                std::cout << "Kontynuuję zapis do pliku bez wyświetlania..." << std::endl;
-                // Kontynuuj zapisywanie do pliku bez wyświetlania
+                std::cout << "Kontynuuje zapis do pliku bez wyswietlania..." << std::endl;
+                // Kontynuuj zapisywanie do pliku bez wyswietlania
                 for (int j = i + 1; j < liczbaProbek; ++j)
                 {
                     double wartoscBezWyswietlania = m_generator->generuj();
@@ -348,14 +348,14 @@ void InterfejsUzytkownika::zapiszDoPliku()
     }
     
     plik.close();
-    std::cout << "\nSygnał został zapisany do pliku: " << nazwaPliku << std::endl;
+    std::cout << "\nSygnal zostal zapisany do pliku: " << nazwaPliku << std::endl;
 }
 
 void InterfejsUzytkownika::wyswietlParametry()
 {
-    std::cout << "\n=== PARAMETRY AKTUALNEGO SYGNAŁU ===" << std::endl;
-    std::cout << "Typ sygnału: " << m_generator->getType() << std::endl;
+    std::cout << "\n=== PARAMETRY AKTUALNEGO SYGNALU ===" << std::endl;
+    std::cout << "Typ sygnalu: " << m_generator->getType() << std::endl;
     
-    // Można by dodać więcej szczegółów, ale wymagałoby to rozszerzenia interfejsu klas
-    std::cout << "Aby zobaczyć szczegółowe parametry, można zapisać konfigurację sygnału." << std::endl;
+    // Mozna by dodac wiecej szczegolow, ale wymagaloby to rozszerzenia interfejsu klas
+    std::cout << "Aby zobaczyc szczegolowe parametry, mozna zapisac konfiguracje sygnalu." << std::endl;
 }
